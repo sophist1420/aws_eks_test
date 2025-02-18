@@ -34,7 +34,7 @@ module "aws_eks_cluster" {
   private_subnets  = ["192.168.10.0/24", "192.168.20.0/24"]
   database_subnets = ["192.168.30.0/24", "192.168.40.0/24"]
   cluster_name     = "my-eks"
-  cluster_version  = "1.30"
+  cluster_version  = "1.32"
   cluster_admin    = data.aws_iam_user.EKS_Admin_ID.user_id
 }
 
@@ -58,10 +58,12 @@ output "database_subnet_group" {
   description = "Database_Subnet_Group Output"
 }
 
+
 output "bastionhost_ip" {
   value       = module.aws_eks_cluster.bastionhost_ip
   description = "BastionHost IP Address Output"
 }
+
 
 # AWS RDS ( CI/CD에서 사용 예정 ) 
 

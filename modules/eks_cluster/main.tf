@@ -79,6 +79,7 @@ resource "aws_instance" "BastionHost" {
   }
 }
 
+
 # Security-Group (NAT-Instance)
 module "NAT_SG" {
   source          = "terraform-aws-modules/security-group/aws"
